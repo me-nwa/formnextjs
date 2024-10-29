@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Specifies ECMAScript target version. ES5 is a safe option for compatibility.
+    "lib": ["dom", "dom.iterable", "esnext"], // Provides standard library typings including DOM, DOM iterable APIs, and latest ECMAScript features.
+    "allowJs": true, // Allows JavaScript files to be included in the project.
+    "skipLibCheck": true, // Skips type checking of all declaration files (.d.ts).
+    "strict": true, // Enables strict type-checking options.
+    "noEmit": true, // Prevents TypeScript from generating any output files.
+    "esModuleInterop": true, // Ensures compatibility between ES modules and CommonJS modules.
+    "module": "esnext", // Uses the latest module standard for compatibility with modern bundlers.
+    "moduleResolution": "bundler", // Uses module resolution best suited for modern bundlers.
+    "resolveJsonModule": true, // Allows importing JSON files as modules.
+    "isolatedModules": true, // Ensures every file is treated as a module for consistent compilation.
+    "jsx": "preserve", // Keeps JSX syntax as-is for further processing by the Next.js compiler.
+    "incremental": true, // Enables faster builds with incremental compilation support.
+    "paths": {
+      "@/*": ["./src/*"] // Sets up path aliasing for easier imports, e.g., `@/components/MyComponent`
+    },
+    "plugins": [
+      {
+        "name": "next" // Adds Next.js specific TypeScript features (auto-imports, hints)
+      }
+    ]
+  },
+  "include": [
+    "next-env.d.ts", // Includes Next.js specific environment typings
+    "**/*.ts",       // Includes all TypeScript files
+    "**/*.tsx",      // Includes all TSX (React + TypeScript) files
+    ".next/types/**/*.ts" // Next.js types, useful for type generation during builds
+  ],
+  "exclude": [
+    "node_modules" // Excludes node_modules to avoid redundant checks
+  ]
+}
